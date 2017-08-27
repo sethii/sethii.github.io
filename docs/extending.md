@@ -27,6 +27,38 @@ variableStore.storeVariable('some-name', 'some-value');
 const myValue = variableStore.getVariableValue('some-name'); //contains 'some-value'
 ```
 
+###User provider
+
+Kakunin comes with functionality that allows you to easily load credentials for a given account type - `UserProvider`.
+
+In `kakunin.conf.js` you can find a section `accounts`.
+
+The structure it has is very simple: 
+
+``` 
+"accounts": {
+    "someAccount": {
+        "accounts": [
+            {
+                "email": "",
+                "password": ""
+            }
+        ]
+    }
+}
+```
+
+`someAccount` - the name of accounts group
+
+`accounts` - an array of account credentials (in order to be able to check if a `currentUser` got an email, this has to have an `email` key, otherwise account can have any kind of
+properties)
+
+Use provider is accessible inside any kind of a step by calling `this.userProvider`. It comes with a single method:
+
+`this.userProvider.getUser(groupName)` - returns an account credentials for a given user group.
+
+It is a good practice to save a current user in `this.currentUser` variable for a email checking service.
+
 ##Adding custom code
 
 ###Custom step

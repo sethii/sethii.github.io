@@ -304,14 +304,56 @@
                 
                 <h2 id="kakunin-config">Kakunin config</h2>
 <pre><code>module.exports = {
+    &quot;browserWidth&quot;: 1600,
+    &quot;browserHeight&quot;: 900,
+    &quot;timeout&quot;: 60,
+    &quot;elementsVisibilityTimeout&quot;: 5,
+    &quot;waitForPageTimeout&quot;: 5,
+    &quot;downloadTimeout&quot;: 30,
+    &quot;reports&quot;: &quot;/reports&quot;,
+    &quot;downloads&quot;: &quot;/downloads&quot;,
+    &quot;data&quot;: &quot;/data&quot;,
+    &quot;features&quot;: [
+        &quot;/features&quot;
+    ],
+    &quot;pages&quot;: [
+        &quot;/pages&quot;
+    ],
+    &quot;matchers&quot;: [
+        &quot;/matchers&quot;
+    ],
+    &quot;generators&quot;: [
+        &quot;/generators&quot;
+    ],
+    &quot;form_handlers&quot;: [
+        &quot;/form_handlers&quot;
+    ],
+    &quot;step_definitions&quot;: [
+        &quot;/step_definitions&quot;
+    ],
+    &quot;comparators&quot;: [
+        &quot;/comparators&quot;
+    ],
+    &quot;dictionaries&quot;: [
+        &quot;/dictionaries&quot;
+    ],
+    &quot;transformers&quot;: [
+        &quot;/transformers&quot;
+    ],
+    &quot;regexes&quot;: [
+        &quot;/regexes&quot;
+    ],
+    &quot;hooks&quot;: [
+        &quot;/hooks&quot;
+    ],
     &quot;clearEmailInboxBeforeTests&quot;: false,
     &quot;clearCookiesAfterScenario&quot;: true,
     &quot;clearLocalStorageAfterScenario&quot;: true,
     &quot;email&quot;: null,
     &quot;headless&quot;: false,
     &quot;noGpu&quot;: false,
-    &quot;type&quot;: &quot;ng1&quot;,
-    &quot;baseUrl&quot;: &quot;http://localhost:3000&quot;,
+    &quot;type&quot;: &quot;otherWeb&quot;,
+    &quot;baseUrl&quot;: &quot;http://localhost:8080&quot;,
     &quot;accounts&quot;: {
         &quot;someAccount&quot;: {
             &quot;accounts&quot;: [
@@ -323,6 +365,7 @@
         }
     }
 }
+
 </code></pre>
 
 <h2 id="configuration-options">Configuration options</h2>

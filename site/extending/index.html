@@ -226,6 +226,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#user-provider" title="User provider" class="md-nav__link">
+    User provider
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -368,6 +375,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#user-provider" title="User provider" class="md-nav__link">
+    User provider
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -487,6 +501,28 @@ variableStore.storeVariable('some-name', 'some-value');
 const myValue = variableStore.getVariableValue('some-name'); //contains 'some-value'
 </code></pre>
 
+<h3 id="user-provider">User provider</h3>
+<p>Kakunin comes with functionality that allows you to easily load credentials for a given account type - <code>UserProvider</code>.</p>
+<p>In <code>kakunin.conf.js</code> you can find a section <code>accounts</code>.</p>
+<p>The structure it has is very simple: </p>
+<pre><code>&quot;accounts&quot;: {
+    &quot;someAccount&quot;: {
+        &quot;accounts&quot;: [
+            {
+                &quot;email&quot;: &quot;&quot;,
+                &quot;password&quot;: &quot;&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+
+<p><code>someAccount</code> - the name of accounts group</p>
+<p><code>accounts</code> - an array of account credentials (in order to be able to check if a <code>currentUser</code> got an email, this has to have an <code>email</code> key, otherwise account can have any kind of
+properties)</p>
+<p>Use provider is accessible inside any kind of a step by calling <code>this.userProvider</code>. It comes with a single method:</p>
+<p><code>this.userProvider.getUser(groupName)</code> - returns an account credentials for a given user group.</p>
+<p>It is a good practice to save a current user in <code>this.currentUser</code> variable for a email checking service.</p>
 <h2 id="adding-custom-code">Adding custom code</h2>
 <h3 id="custom-step">Custom step</h3>
 <p>In order to add a custom step, you have to create inside of a directory specified as <code>step_definitions</code> in kakunin configuration file <code>default: /step_definitions</code>.</p>
